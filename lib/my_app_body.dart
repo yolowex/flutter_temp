@@ -47,7 +47,6 @@ class Generator extends StatelessWidget {
         children: [
           Flexible(
               child: TextField(
-
             controller: controller,
             decoration: InputDecoration(
                 border: OutlineInputBorder(),
@@ -64,8 +63,6 @@ class Generator extends StatelessWidget {
   }
 }
 
-
-
 class TaskList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -73,19 +70,15 @@ class TaskList extends StatelessWidget {
 
     List<Widget> taskList = [];
 
-    if (appState.navBarSelectedIndex == 0){
+    if (appState.navBarSelectedIndex == 0) {
       taskList = appState.taskList;
-    }
-    else if (appState.navBarSelectedIndex == 1){
+    } else if (appState.navBarSelectedIndex == 1) {
       taskList = appState.taskList.where((i) => i.isChecked == true).toList();
-    }
-    else{
+    } else {
       taskList = appState.taskList.where((i) => i.isChecked == false).toList();
     }
 
-
-
-
-    return Container(color: Colors.black26,child: ListView(children: taskList));
+    return Container(
+        color: Colors.black26, child: ListView(children: taskList));
   }
 }

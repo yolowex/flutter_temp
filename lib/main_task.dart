@@ -56,9 +56,9 @@ class _TaskState extends State<Task> {
           children: [
             Expanded(
                 child: TextField(
-                  style: textStyle,
-                  controller: widget.editingController,
-                )),
+              style: textStyle,
+              controller: widget.editingController,
+            )),
             SizedBox(
               width: 15,
             ),
@@ -84,12 +84,13 @@ class _TaskState extends State<Task> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Checkbox(value: widget.isChecked, onChanged: (newValue){
-            setState(() {
-              widget.isChecked = !widget.isChecked!;
-            }
-            );
-          }),
+          Checkbox(
+              value: widget.isChecked,
+              onChanged: (newValue) {
+                setState(() {
+                  widget.isChecked = !widget.isChecked!;
+                });
+              }),
           SizedBox(
             width: 15,
           ),
